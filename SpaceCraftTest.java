@@ -70,4 +70,20 @@ class SpaceCraftTest {
         SC.controlSpacecraft(commands);
         assertEquals("E", SC.getDirection());
     }
+
+    @Test
+    void shouldRotateSpacecraftInTheUpwardDirection() {
+        SpaceCraft SC = new SpaceCraft();
+        ArrayList<String> commands = new ArrayList<>(Arrays.asList("u"));
+        SC.controlSpacecraft(commands);
+        assertEquals("Up", SC.getDirection());
+    }
+
+    @Test
+    void shouldRotateSpacecraftInTheDownwardDirection() {
+        SpaceCraft SC = new SpaceCraft();
+        ArrayList<String> commands = new ArrayList<>(Arrays.asList("d"));
+        SC.controlSpacecraft(commands);
+        assertEquals("Down", SC.getDirection());
+    }
 }

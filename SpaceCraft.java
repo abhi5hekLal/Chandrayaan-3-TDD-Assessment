@@ -112,6 +112,12 @@ public class SpaceCraft {
                     direction = "W";
                 }
             }
+            else if(command.equalsIgnoreCase("u")) {
+                direction = "Up";
+            }
+            else if(command.equalsIgnoreCase("d")) {
+                direction = "Down";
+            }
         }
     }
 }
