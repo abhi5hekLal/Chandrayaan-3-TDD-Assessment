@@ -20,9 +20,15 @@ class SpaceCraftTest {
     }
 
     @Test
-    void shouldReturnFinalDirectionAsSetByParameterizedConstructor() {
+    void shouldReturnFinalPositionAsSetByParameterizedConstructor() {
         SpaceCraft SC = new SpaceCraft(1, 0, 2, "S");
         ArrayList<Integer> expectedList = new ArrayList<Integer>(Arrays.asList(1, 0, 2));
         assertEquals(expectedList, SC.finalPositionOfSpaceCraft());
+    }
+
+    @Test
+    void shouldReturnFinalDirectionAsSetByParameterizedConstructor() {
+        SpaceCraft SC = new SpaceCraft(1, 0, 2, "S");
+        assertEquals("S", SC.finalDirection());
     }
 }
