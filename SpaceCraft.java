@@ -1,8 +1,11 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class SpaceCraft {
-    int xCoordinate;
-    int yCoordinate;
-    int zCoordinate;
-    String direction;
+    private int xCoordinate;
+    private int yCoordinate;
+    private int zCoordinate;
+    private String direction;
     SpaceCraft() {
         xCoordinate = 0;
         yCoordinate = 0;
@@ -17,5 +20,7 @@ public class SpaceCraft {
         this.direction = direction;
     }
 
-
+    ArrayList<Integer> finalPositionOfSpaceCraft() {
+        return new ArrayList<Integer>(Arrays.asList(xCoordinate, yCoordinate, zCoordinate));
+    }
 }
