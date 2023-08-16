@@ -23,4 +23,8 @@ public class SpaceCraft {
     ArrayList<Integer> finalPositionOfSpaceCraft() {
         return new ArrayList<Integer>(Arrays.asList(xCoordinate, yCoordinate, zCoordinate));
     }
+
+    String finalDirection() {
+        return direction;
+    }
 }
