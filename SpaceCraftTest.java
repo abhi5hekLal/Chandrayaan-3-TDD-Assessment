@@ -24,7 +24,7 @@ class SpaceCraftTest {
 
 
     @Test
-    void shouldIncreaseYCoordinateByOne() {
+    void shouldIncreaseYCoordinateByOneForCommandF() {
         SpaceCraft SC = new SpaceCraft();
         ArrayList<String> commands = new ArrayList<>(Arrays.asList("f"));
         SC.controlSpacecraft(commands);
@@ -32,10 +32,26 @@ class SpaceCraftTest {
     }
 
     @Test
-    void shouldIncreaseXCoordinateByOne() {
+    void shouldIncreaseXCoordinateByOneForCommandF() {
         SpaceCraft SC = new SpaceCraft(0, 0, 0, "E");
         ArrayList<String> commands = new ArrayList<>(Arrays.asList("f"));
         SC.controlSpacecraft(commands);
         assertEquals(1, SC.getXCoordinate());
+    }
+
+    @Test
+    void shouldIncreaseZCoordinateByOneForCommandF() {
+        SpaceCraft SC = new SpaceCraft(0, 0, 0, "Up");
+        ArrayList<String> commands = new ArrayList<>(Arrays.asList("f"));
+        SC.controlSpacecraft(commands);
+        assertEquals(1, SC.getZCoordinate());
+    }
+
+    @Test
+    void shouldIncreaseYCoordinateByOneForCommandB() {
+        SpaceCraft SC = new SpaceCraft(0, 0, 0, "S");
+        ArrayList<String> commands = new ArrayList<>(Arrays.asList("b"));
+        SC.controlSpacecraft(commands);
+        assertEquals(1, SC.getYCoordinate());
     }
 }

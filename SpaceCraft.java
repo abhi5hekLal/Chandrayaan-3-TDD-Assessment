@@ -28,7 +28,7 @@ public class SpaceCraft {
         return yCoordinate;
     }
 
-    public int getzCoordinate() {
+    public int getZCoordinate() {
         return zCoordinate;
     }
 
@@ -62,6 +62,26 @@ public class SpaceCraft {
                 }
                 else if(direction.equalsIgnoreCase("Down")) {
                     zCoordinate -= 1;
+                }
+            }
+            else if(command.equalsIgnoreCase("b")) {
+                if(direction.equalsIgnoreCase("N")) {
+                    yCoordinate -= 1;
+                }
+                else if(direction.equalsIgnoreCase("S")) {
+                    yCoordinate += 1;
+                }
+                else if(direction.equalsIgnoreCase("E")) {
+                    xCoordinate -= 1;
+                }
+                else if(direction.equalsIgnoreCase("W")) {
+                    xCoordinate += 1;
+                }
+                else if(direction.equalsIgnoreCase("Up")) {
+                    zCoordinate -= 1;
+                }
+                else if(direction.equalsIgnoreCase("Down")) {
+                    zCoordinate += 1;
                 }
             }
 
