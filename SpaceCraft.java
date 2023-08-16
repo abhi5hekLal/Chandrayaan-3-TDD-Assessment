@@ -43,91 +43,70 @@ public class SpaceCraft {
 
     void controlSpacecraft(ArrayList<String> commands) {
         for(var command: commands) {
-            if(command.equalsIgnoreCase("f")) {
-                if(direction.equalsIgnoreCase("N")) {
-                    yCoordinate += 1;
+            switch (command) {
+                case "f" -> {
+                    if (direction.equalsIgnoreCase("N")) {
+                        yCoordinate += 1;
+                    } else if (direction.equalsIgnoreCase("S")) {
+                        yCoordinate -= 1;
+                    } else if (direction.equalsIgnoreCase("E")) {
+                        xCoordinate += 1;
+                    } else if (direction.equalsIgnoreCase("W")) {
+                        xCoordinate -= 1;
+                    } else if (direction.equalsIgnoreCase("Up")) {
+                        zCoordinate += 1;
+                    } else if (direction.equalsIgnoreCase("Down")) {
+                        zCoordinate -= 1;
+                    }
                 }
-                else if(direction.equalsIgnoreCase("S")) {
-                    yCoordinate -= 1;
+                case "b" -> {
+                    if (direction.equalsIgnoreCase("N")) {
+                        yCoordinate -= 1;
+                    } else if (direction.equalsIgnoreCase("S")) {
+                        yCoordinate += 1;
+                    } else if (direction.equalsIgnoreCase("E")) {
+                        xCoordinate -= 1;
+                    } else if (direction.equalsIgnoreCase("W")) {
+                        xCoordinate += 1;
+                    } else if (direction.equalsIgnoreCase("Up")) {
+                        zCoordinate -= 1;
+                    } else if (direction.equalsIgnoreCase("Down")) {
+                        zCoordinate += 1;
+                    }
                 }
-                else if(direction.equalsIgnoreCase("E")) {
-                    xCoordinate += 1;
+                case "l" -> {
+                    if (direction.equalsIgnoreCase("E")) {
+                        direction = "N";
+                    } else if (direction.equalsIgnoreCase("W")) {
+                        direction = "S";
+                    } else if (direction.equalsIgnoreCase("N")) {
+                        direction = "W";
+                    } else if (direction.equalsIgnoreCase("S")) {
+                        direction = "E";
+                    } else if (direction.equalsIgnoreCase("Up")) {
+                        direction = "N";
+                    } else if (direction.equalsIgnoreCase("Down")) {
+                        direction = "S";
+                    }
                 }
-                else if(direction.equalsIgnoreCase("W")) {
-                    xCoordinate -= 1;
+                case "r" -> {
+                    if (direction.equalsIgnoreCase("E")) {
+                        direction = "S";
+                    } else if (direction.equalsIgnoreCase("W")) {
+                        direction = "N";
+                    } else if (direction.equalsIgnoreCase("N")) {
+                        direction = "E";
+                    } else if (direction.equalsIgnoreCase("S")) {
+                        direction = "W";
+                    } else if (direction.equalsIgnoreCase("Up")) {
+                        direction = "S";
+                    } else if (direction.equalsIgnoreCase("Down")) {
+                        direction = "N";
+                    }
                 }
-                else if(direction.equalsIgnoreCase("Up")) {
-                    zCoordinate += 1;
-                }
-                else if(direction.equalsIgnoreCase("Down")) {
-                    zCoordinate -= 1;
-                }
-            }
-            else if(command.equalsIgnoreCase("b")) {
-                if(direction.equalsIgnoreCase("N")) {
-                    yCoordinate -= 1;
-                }
-                else if(direction.equalsIgnoreCase("S")) {
-                    yCoordinate += 1;
-                }
-                else if(direction.equalsIgnoreCase("E")) {
-                    xCoordinate -= 1;
-                }
-                else if(direction.equalsIgnoreCase("W")) {
-                    xCoordinate += 1;
-                }
-                else if(direction.equalsIgnoreCase("Up")) {
-                    zCoordinate -= 1;
-                }
-                else if(direction.equalsIgnoreCase("Down")) {
-                    zCoordinate += 1;
-                }
-            }
-            else if(command.equalsIgnoreCase("l")) {
-                if(direction.equalsIgnoreCase("E")) {
-                    direction = "N";
-                }
-                else if(direction.equalsIgnoreCase("W")) {
-                    direction = "S";
-                }
-                else if(direction.equalsIgnoreCase("N")) {
-                    direction = "W";
-                }
-                else if(direction.equalsIgnoreCase("S")) {
-                    direction = "E";
-                }
-                else if (direction.equalsIgnoreCase("Up")) {
-                    direction = "N";
-                }
-                else if(direction.equalsIgnoreCase("Down")) {
-                    direction = "S";
-                }
-            }
-            else if(command.equalsIgnoreCase("r")) {
-                if(direction.equalsIgnoreCase("E")) {
-                    direction = "S";
-                }
-                else if(direction.equalsIgnoreCase("W")) {
-                    direction = "N";
-                }
-                else if(direction.equalsIgnoreCase("N")) {
-                    direction = "E";
-                }
-                else if(direction.equalsIgnoreCase("S")) {
-                    direction = "W";
-                }
-                else if (direction.equalsIgnoreCase("Up")) {
-                    direction = "S";
-                }
-                else if(direction.equalsIgnoreCase("Down")) {
-                    direction = "N";
-                }
-            }
-            else if(command.equalsIgnoreCase("u")) {
-                direction = "Up";
-            }
-            else if(command.equalsIgnoreCase("d")) {
-                direction = "Down";
+                case "u" -> direction = "Up";
+                case "d" -> direction = "Down";
+                default -> System.out.println("Invalid Input Command!");
             }
         }
     }
