@@ -84,7 +84,34 @@ public class SpaceCraft {
                     zCoordinate += 1;
                 }
             }
-
+            else if(command.equalsIgnoreCase("l")) {
+                if(direction.equalsIgnoreCase("E")) {
+                    direction = "N";
+                }
+                else if(direction.equalsIgnoreCase("W")) {
+                    direction = "S";
+                }
+                else if(direction.equalsIgnoreCase("N")) {
+                    direction = "W";
+                }
+                else if(direction.equalsIgnoreCase("S")) {
+                    direction = "E";
+                }
+            }
+            else if(command.equalsIgnoreCase("r")) {
+                if(direction.equalsIgnoreCase("E")) {
+                    direction = "S";
+                }
+                else if(direction.equalsIgnoreCase("W")) {
+                    direction = "N";
+                }
+                else if(direction.equalsIgnoreCase("N")) {
+                    direction = "E";
+                }
+                else if(direction.equalsIgnoreCase("S")) {
+                    direction = "W";
+                }
+            }
         }
     }
 }

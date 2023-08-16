@@ -54,4 +54,20 @@ class SpaceCraftTest {
         SC.controlSpacecraft(commands);
         assertEquals(1, SC.getYCoordinate());
     }
+
+    @Test
+    void shouldRotateCraftToWest() {
+        SpaceCraft SC = new SpaceCraft();
+        ArrayList<String> commands = new ArrayList<>(Arrays.asList("l"));
+        SC.controlSpacecraft(commands);
+        assertEquals("W", SC.getDirection());
+    }
+
+    @Test
+    void shouldRotateToEast() {
+        SpaceCraft SC = new SpaceCraft();
+        ArrayList<String> commands = new ArrayList<>(Arrays.asList("r"));
+        SC.controlSpacecraft(commands);
+        assertEquals("E", SC.getDirection());
+    }
 }
