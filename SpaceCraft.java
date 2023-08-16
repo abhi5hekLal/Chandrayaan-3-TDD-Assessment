@@ -32,21 +32,37 @@ public class SpaceCraft {
         return zCoordinate;
     }
 
+    public String getDirection() {
+        return direction;
+    }
 
+    public void setXCoordinate(int xCoordinate) {
+        this.xCoordinate = xCoordinate;
+    }
+
+    public void setYCoordinate(int yCoordinate) {
+        this.yCoordinate = yCoordinate;
+    }
+
+    public void setZCoordinate(int zCoordinate) {
+        this.zCoordinate = zCoordinate;
+    }
+
+    public void setDirection(String direction) {
+        this.direction = direction;
+    }
 
     ArrayList<Integer> finalPositionOfSpaceCraft() {
         return new ArrayList<Integer>(Arrays.asList(xCoordinate, yCoordinate, zCoordinate));
     }
 
-    public String finalDirection() {
-        return direction;
-    }
 
     void controlSpacecraft(ArrayList<String> commands) {
         for(var command: commands) {
             if(command.equals("f")) {
                 yCoordinate += 1;
             }
+
         }
     }
 }

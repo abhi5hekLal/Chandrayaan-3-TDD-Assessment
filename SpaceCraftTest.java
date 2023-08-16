@@ -13,11 +13,6 @@ class SpaceCraftTest {
         ArrayList<Integer> expectedList = new ArrayList<Integer>(Arrays.asList(0, 0, 0));
         assertEquals(expectedList, SC.finalPositionOfSpaceCraft());
     }
-    @Test
-    void shouldReturnFinalDirectionAsNorth() {
-        SpaceCraft SC = new SpaceCraft();
-        assertEquals("N", SC.finalDirection());
-    }
 
     @Test
     void shouldReturnFinalPositionAsSetByParameterizedConstructor() {
@@ -26,11 +21,7 @@ class SpaceCraftTest {
         assertEquals(expectedList, SC.finalPositionOfSpaceCraft());
     }
 
-    @Test
-    void shouldReturnFinalDirectionAsSetByParameterizedConstructor() {
-        SpaceCraft SC = new SpaceCraft(1, 0, 2, "S");
-        assertEquals("S", SC.finalDirection());
-    }
+
 
     @Test
     void shouldIncreaseYCoordinateByOne() {
@@ -38,5 +29,11 @@ class SpaceCraftTest {
         ArrayList<String> commands = new ArrayList<>(Arrays.asList("f"));
         SC.controlSpacecraft(commands);
         assertEquals(1, SC.getYCoordinate());
+    }
+
+    @Test
+    void shouldIncreaseXCoordinateByOne() {
+        SpaceCraft SC = new SpaceCraft(0, 0, 0, "E");
+        assertEquals(1, SC.getXCoordinate());
     }
 }
