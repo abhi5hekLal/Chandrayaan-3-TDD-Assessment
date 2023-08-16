@@ -34,6 +34,8 @@ class SpaceCraftTest {
     @Test
     void shouldIncreaseXCoordinateByOne() {
         SpaceCraft SC = new SpaceCraft(0, 0, 0, "E");
+        ArrayList<String> commands = new ArrayList<>(Arrays.asList("f"));
+        SC.controlSpacecraft(commands);
         assertEquals(1, SC.getXCoordinate());
     }
 }

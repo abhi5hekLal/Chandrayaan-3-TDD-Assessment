@@ -36,31 +36,33 @@ public class SpaceCraft {
         return direction;
     }
 
-    public void setXCoordinate(int xCoordinate) {
-        this.xCoordinate = xCoordinate;
-    }
-
-    public void setYCoordinate(int yCoordinate) {
-        this.yCoordinate = yCoordinate;
-    }
-
-    public void setZCoordinate(int zCoordinate) {
-        this.zCoordinate = zCoordinate;
-    }
-
-    public void setDirection(String direction) {
-        this.direction = direction;
-    }
-
     ArrayList<Integer> finalPositionOfSpaceCraft() {
         return new ArrayList<Integer>(Arrays.asList(xCoordinate, yCoordinate, zCoordinate));
     }
 
 
     void controlSpacecraft(ArrayList<String> commands) {
+        SpaceCraft SC = new SpaceCraft();
         for(var command: commands) {
-            if(command.equals("f")) {
-                yCoordinate += 1;
+            if(command.equalsIgnoreCase("f")) {
+                if(direction.equalsIgnoreCase("N")) {
+                    yCoordinate += 1;
+                }
+                else if(direction.equalsIgnoreCase("S")) {
+                    yCoordinate -= 1;
+                }
+                else if(direction.equalsIgnoreCase("E")) {
+                    xCoordinate += 1;
+                }
+                else if(direction.equalsIgnoreCase("W")) {
+                    xCoordinate -= 1;
+                }
+                else if(direction.equalsIgnoreCase("Up")) {
+                    zCoordinate += 1;
+                }
+                else if(direction.equalsIgnoreCase("Down")) {
+                    zCoordinate -= 1;
+                }
             }
 
         }
