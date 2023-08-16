@@ -37,12 +37,11 @@ public class SpaceCraft {
     }
 
     ArrayList<Integer> finalPositionOfSpaceCraft() {
-        return new ArrayList<Integer>(Arrays.asList(xCoordinate, yCoordinate, zCoordinate));
+        return new ArrayList<>(Arrays.asList(xCoordinate, yCoordinate, zCoordinate));
     }
 
 
     void controlSpacecraft(ArrayList<String> commands) {
-        SpaceCraft SC = new SpaceCraft();
         for(var command: commands) {
             if(command.equalsIgnoreCase("f")) {
                 if(direction.equalsIgnoreCase("N")) {
@@ -97,6 +96,12 @@ public class SpaceCraft {
                 else if(direction.equalsIgnoreCase("S")) {
                     direction = "E";
                 }
+                else if (direction.equalsIgnoreCase("Up")) {
+                    direction = "N";
+                }
+                else if(direction.equalsIgnoreCase("Down")) {
+                    direction = "S";
+                }
             }
             else if(command.equalsIgnoreCase("r")) {
                 if(direction.equalsIgnoreCase("E")) {
@@ -110,6 +115,12 @@ public class SpaceCraft {
                 }
                 else if(direction.equalsIgnoreCase("S")) {
                     direction = "W";
+                }
+                else if (direction.equalsIgnoreCase("Up")) {
+                    direction = "S";
+                }
+                else if(direction.equalsIgnoreCase("Down")) {
+                    direction = "N";
                 }
             }
             else if(command.equalsIgnoreCase("u")) {
