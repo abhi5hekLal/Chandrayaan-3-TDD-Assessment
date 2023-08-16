@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Test;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -26,7 +27,7 @@ class SpaceCraftTest {
     @Test
     void shouldIncreaseYCoordinateByOneForCommandF() {
         SpaceCraft SC = new SpaceCraft();
-        ArrayList<String> commands = new ArrayList<>(Arrays.asList("f"));
+        ArrayList<String> commands = new ArrayList<>(List.of("f"));
         SC.controlSpacecraft(commands);
         assertEquals(1, SC.getYCoordinate());
     }
@@ -34,7 +35,7 @@ class SpaceCraftTest {
     @Test
     void shouldIncreaseXCoordinateByOneForCommandF() {
         SpaceCraft SC = new SpaceCraft(0, 0, 0, "E");
-        ArrayList<String> commands = new ArrayList<>(Arrays.asList("f"));
+        ArrayList<String> commands = new ArrayList<>(List.of("f"));
         SC.controlSpacecraft(commands);
         assertEquals(1, SC.getXCoordinate());
     }
@@ -42,7 +43,7 @@ class SpaceCraftTest {
     @Test
     void shouldIncreaseZCoordinateByOneForCommandF() {
         SpaceCraft SC = new SpaceCraft(0, 0, 0, "Up");
-        ArrayList<String> commands = new ArrayList<>(Arrays.asList("f"));
+        ArrayList<String> commands = new ArrayList<>(List.of("f"));
         SC.controlSpacecraft(commands);
         assertEquals(1, SC.getZCoordinate());
     }
@@ -50,7 +51,7 @@ class SpaceCraftTest {
     @Test
     void shouldIncreaseYCoordinateByOneForCommandB() {
         SpaceCraft SC = new SpaceCraft(0, 0, 0, "S");
-        ArrayList<String> commands = new ArrayList<>(Arrays.asList("b"));
+        ArrayList<String> commands = new ArrayList<>(List.of("b"));
         SC.controlSpacecraft(commands);
         assertEquals(1, SC.getYCoordinate());
     }
@@ -58,7 +59,7 @@ class SpaceCraftTest {
     @Test
     void shouldRotateCraftToWest() {
         SpaceCraft SC = new SpaceCraft();
-        ArrayList<String> commands = new ArrayList<>(Arrays.asList("l"));
+        ArrayList<String> commands = new ArrayList<>(List.of("l"));
         SC.controlSpacecraft(commands);
         assertEquals("W", SC.getDirection());
     }
@@ -66,7 +67,7 @@ class SpaceCraftTest {
     @Test
     void shouldRotateToEast() {
         SpaceCraft SC = new SpaceCraft();
-        ArrayList<String> commands = new ArrayList<>(Arrays.asList("r"));
+        ArrayList<String> commands = new ArrayList<>(List.of("r"));
         SC.controlSpacecraft(commands);
         assertEquals("E", SC.getDirection());
     }
@@ -74,7 +75,7 @@ class SpaceCraftTest {
     @Test
     void shouldRotateSpacecraftInTheUpwardDirection() {
         SpaceCraft SC = new SpaceCraft();
-        ArrayList<String> commands = new ArrayList<>(Arrays.asList("u"));
+        ArrayList<String> commands = new ArrayList<>(List.of("u"));
         SC.controlSpacecraft(commands);
         assertEquals("Up", SC.getDirection());
     }
@@ -82,7 +83,7 @@ class SpaceCraftTest {
     @Test
     void shouldRotateSpacecraftInTheDownwardDirection() {
         SpaceCraft SC = new SpaceCraft();
-        ArrayList<String> commands = new ArrayList<>(Arrays.asList("d"));
+        ArrayList<String> commands = new ArrayList<>(List.of("d"));
         SC.controlSpacecraft(commands);
         assertEquals("Down", SC.getDirection());
     }
