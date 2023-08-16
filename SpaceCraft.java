@@ -20,11 +20,33 @@ public class SpaceCraft {
         this.direction = direction;
     }
 
+    public int getXCoordinate() {
+        return xCoordinate;
+    }
+
+    public int getYCoordinate() {
+        return yCoordinate;
+    }
+
+    public int getzCoordinate() {
+        return zCoordinate;
+    }
+
+
+
     ArrayList<Integer> finalPositionOfSpaceCraft() {
         return new ArrayList<Integer>(Arrays.asList(xCoordinate, yCoordinate, zCoordinate));
     }
 
-    String finalDirection() {
+    public String finalDirection() {
         return direction;
+    }
+
+    void controlSpacecraft(ArrayList<String> commands) {
+        for(var command: commands) {
+            if(command.equals("f")) {
+                yCoordinate += 1;
+            }
+        }
     }
 }

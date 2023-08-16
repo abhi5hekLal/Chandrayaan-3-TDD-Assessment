@@ -31,4 +31,12 @@ class SpaceCraftTest {
         SpaceCraft SC = new SpaceCraft(1, 0, 2, "S");
         assertEquals("S", SC.finalDirection());
     }
+
+    @Test
+    void shouldIncreaseYCoordinateByOne() {
+        SpaceCraft SC = new SpaceCraft();
+        ArrayList<String> commands = new ArrayList<>(Arrays.asList("f"));
+        SC.controlSpacecraft(commands);
+        assertEquals(1, SC.getYCoordinate());
+    }
 }
